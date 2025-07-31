@@ -22,7 +22,7 @@
 - 7788/HTTP - веб-сайт Beemers, веб-сервер TornadoServer 5.1.1
 
 <details>
-<summary> **Скриншоты открытых портов** </summary>
+<summary><b>Скриншоты открытых портов</b></summary>
 
 ![](pics/92.51.39.106_osint_open_ports_ssh_22.png)
 
@@ -33,7 +33,7 @@
 </details>
 
 <details>
-<summary> **Скриншоты главных страниц обнаруженных сайтов** </summary>
+<summary><b>Скриншоты главных страниц обнаруженных сайтов</b></summary>
 
 ![](pics/netologyvulnapp_main_page.png)
 
