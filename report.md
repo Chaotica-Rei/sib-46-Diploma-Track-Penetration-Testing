@@ -10,6 +10,7 @@
 В ходе разведки была получена следующая информация об адресе:
 
 ![](pics/92.51.39.106_osint_basic_info.png)
+
 ![](pics/92.51.39.106_osint_geo.png)
 
 Местонахождение сервера - Россия, Санкт-Петербург
@@ -21,18 +22,21 @@
 - 7788/HTTP - веб-сайт Beemers, веб-сервер TornadoServer 5.1.1
 
 <details>
-<summary>**Скриншоты открытых портов**</summary>
+<summary> **Скриншоты открытых портов** </summary>
 
 ![](pics/92.51.39.106_osint_open_ports_ssh_22.png)
+
 ![](pics/92.51.39.106_osint_open_ports_http_8050.png)
+
 ![](pics/92.51.39.106_osint_open_ports_http_7788.png)
 
 </details>
 
 <details>
-<summary>**Скриншоты главных страниц обнаруженных сайтов**</summary>
+<summary> **Скриншоты главных страниц обнаруженных сайтов** </summary>
 
 ![](pics/netologyvulnapp_main_page.png)
+
 ![](pics/beemers_main_page.png)
 
 </details>
