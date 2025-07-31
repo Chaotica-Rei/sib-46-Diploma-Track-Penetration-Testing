@@ -7,7 +7,7 @@
 - [CriminalIP](https://www.criminalip.io/)
 - [Censys Platform](https://platform.censys.io)
   
-В ходе разведки была получена следующая информация:
+В ходе разведки была получена следующая информация об адресе:
 
 ![](pics/92.51.39.106_osint_basic_info.png)
 ![](pics/92.51.39.106_osint_geo.png)
