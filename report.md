@@ -24,11 +24,11 @@
 <details>
 <summary><b>Скриншоты открытых портов</b></summary>
 
-![](pics/92.51.39.106_osint_open_ports_ssh_22.png)
+<p>![](pics/92.51.39.106_osint_open_ports_ssh_22.png)</p>
 
-![](pics/92.51.39.106_osint_open_ports_http_8050.png)
+<p>![](pics/92.51.39.106_osint_open_ports_http_8050.png)</p>
 
-![](pics/92.51.39.106_osint_open_ports_http_7788.png)
+<p>![](pics/92.51.39.106_osint_open_ports_http_7788.png)</p>
 
 </details>
 
