@@ -67,6 +67,10 @@
 
 **Nmap**
 
+```sh
+$ nmap -sV -T4 -p 22,8050,7788 --script vulners 92.51.39.106
+```
+
 **Dirsearch**
 
 ```sh
