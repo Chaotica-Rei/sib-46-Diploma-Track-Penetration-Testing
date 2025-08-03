@@ -65,7 +65,9 @@
 Для сканирования хоста использовались Open Source инструменты Nmap, Dirsearch.\
 В ходе сканирования было обнаружено, что ...
 
-Dirsearch
+**Nmap**
+
+**Dirsearch**
 
 ```sh
 $ dirsearch -u http://92.51.39.106:8050 --cookie="PHPSESSID=ccltoo7k0vvc7drerrosabjnp2" 
