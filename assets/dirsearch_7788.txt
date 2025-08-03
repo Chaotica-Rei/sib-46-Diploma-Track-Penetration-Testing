@@ -1,0 +1,9 @@
+# Dirsearch started Sun Aug  3 00:22:26 2025 as: /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u http://92.51.39.106:7788
+
+200     5KB  http://92.51.39.106:7788/login.html
+200     3KB  http://92.51.39.106:7788/search
+200     4KB  http://92.51.39.106:7788/server.html
+500   332B   http://92.51.39.106:7788/static/api/swagger.json
+500   332B   http://92.51.39.106:7788/static/api/swagger.yaml
+500   324B   http://92.51.39.106:7788/static/dump.sql
+405   325B   http://92.51.39.106:7788/upload

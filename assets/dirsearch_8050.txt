@@ -1,0 +1,74 @@
+# Dirsearch started Sun Aug  3 00:20:32 2025 as: /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u http://92.51.39.106:8050 --cookie=PHPSESSID=ccltoo7k0vvc7drerrosabjnp
+
+403   292B   http://92.51.39.106:8050/.ht_wsr.txt
+403   295B   http://92.51.39.106:8050/.htaccess.orig
+403   295B   http://92.51.39.106:8050/.htaccess.bak1
+403   297B   http://92.51.39.106:8050/.htaccess.sample
+403   295B   http://92.51.39.106:8050/.htaccess.save
+403   295B   http://92.51.39.106:8050/.htaccess_orig
+403   296B   http://92.51.39.106:8050/.htaccess_extra
+403   293B   http://92.51.39.106:8050/.htaccessBAK
+403   293B   http://92.51.39.106:8050/.htaccessOLD
+403   293B   http://92.51.39.106:8050/.htaccess_sc
+403   286B   http://92.51.39.106:8050/.html
+403   285B   http://92.51.39.106:8050/.htm
+403   294B   http://92.51.39.106:8050/.htaccessOLD2
+403   291B   http://92.51.39.106:8050/.htpasswds
+403   295B   http://92.51.39.106:8050/.htpasswd_test
+403   292B   http://92.51.39.106:8050/.httr-oauth
+403   286B   http://92.51.39.106:8050/.php3
+403   285B   http://92.51.39.106:8050/.php
+200   806B   http://92.51.39.106:8050/about.php
+301   318B   http://92.51.39.106:8050/admin    -> REDIRECTS TO: http://92.51.39.106:8050/admin/
+200   196B   http://92.51.39.106:8050/admin/
+303     0B   http://92.51.39.106:8050/admin/home.php    -> REDIRECTS TO: /admin/index.php?page=login
+200   196B   http://92.51.39.106:8050/admin/index.php
+200   181B   http://92.51.39.106:8050/admin/login.php
+200   919B   http://92.51.39.106:8050/calendar.php
+301   317B   http://92.51.39.106:8050/cart    -> REDIRECTS TO: http://92.51.39.106:8050/cart/
+403   289B   http://92.51.39.106:8050/cgi-bin/
+403   299B   http://92.51.39.106:8050/cgi-bin/awstats.pl
+403   307B   http://92.51.39.106:8050/cgi-bin/a1stats/a1disp.cgi
+403   300B   http://92.51.39.106:8050/cgi-bin/htimage.exe?2,2
+403   297B   http://92.51.39.106:8050/cgi-bin/awstats/
+403   299B   http://92.51.39.106:8050/cgi-bin/htmlscript
+403   301B   http://92.51.39.106:8050/cgi-bin/imagemap.exe?2,2
+403   298B   http://92.51.39.106:8050/cgi-bin/mt/mt.cgi
+403   302B   http://92.51.39.106:8050/cgi-bin/mt-xmlrpc.cgi
+403   298B   http://92.51.39.106:8050/cgi-bin/login.cgi
+403   299B   http://92.51.39.106:8050/cgi-bin/index.html
+403   295B   http://92.51.39.106:8050/cgi-bin/mt.cgi
+403   298B   http://92.51.39.106:8050/cgi-bin/login.php
+403   294B   http://92.51.39.106:8050/cgi-bin/login
+403   306B   http://92.51.39.106:8050/cgi-bin/mt7/mt-xmlrpc.cgi
+403   305B   http://92.51.39.106:8050/cgi-bin/mt/mt-xmlrpc.cgi
+403   299B   http://92.51.39.106:8050/cgi-bin/mt7/mt.cgi
+403   296B   http://92.51.39.106:8050/cgi-bin/php.ini
+403   297B   http://92.51.39.106:8050/cgi-bin/printenv
+403   300B   http://92.51.39.106:8050/cgi-bin/printenv.pl
+403   297B   http://92.51.39.106:8050/cgi-bin/test-cgi
+403   300B   http://92.51.39.106:8050/cgi-bin/ViewLog.asp
+403   297B   http://92.51.39.106:8050/cgi-bin/test.cgi
+301   321B   http://92.51.39.106:8050/comments    -> REDIRECTS TO: http://92.51.39.106:8050/comments/
+301   316B   http://92.51.39.106:8050/css    -> REDIRECTS TO: http://92.51.39.106:8050/css/
+200   851B   http://92.51.39.106:8050/error.php
+301   319B   http://92.51.39.106:8050/images    -> REDIRECTS TO: http://92.51.39.106:8050/images/
+200   491B   http://92.51.39.106:8050/images/
+500   611B   http://92.51.39.106:8050/include/config.inc.php
+500   611B   http://92.51.39.106:8050/include/config.inc.js
+500   611B   http://92.51.39.106:8050/include/fckeditor/
+500   611B   http://92.51.39.106:8050/include/config.inc.aspx
+500   611B   http://92.51.39.106:8050/include
+500   611B   http://92.51.39.106:8050/include/config.inc.html
+500   611B   http://92.51.39.106:8050/include/fckeditor
+500   611B   http://92.51.39.106:8050/include/
+500   611B   http://92.51.39.106:8050/include/config.inc.jsp
+301   321B   http://92.51.39.106:8050/pictures    -> REDIRECTS TO: http://92.51.39.106:8050/pictures/
+403   294B   http://92.51.39.106:8050/server-status
+403   295B   http://92.51.39.106:8050/server-status/
+200   113B   http://92.51.39.106:8050/test.php
+200   637B   http://92.51.39.106:8050/upload/
+301   319B   http://92.51.39.106:8050/upload    -> REDIRECTS TO: http://92.51.39.106:8050/upload/
+200   568B   http://92.51.39.106:8050/users/
+301   318B   http://92.51.39.106:8050/users    -> REDIRECTS TO: http://92.51.39.106:8050/users/
+200   949B   http://92.51.39.106:8050/users/login.php
