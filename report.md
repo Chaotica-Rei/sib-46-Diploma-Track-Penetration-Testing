@@ -54,7 +54,7 @@
 
 - открытые порты с установленным уязвимым ПО + ДОПОЛНИТЬ
 - использование сервисами NetologyVulnApp и Beemers соединения HTTP, данный протокол не является безопасным, т.к. передаёт данные в открытом (нешифрованном) виде;
-- сервис NetologyVulnApp генерирует сессионные cookie PHPSESSID, для которых не установлены флаги HttpOnly и Secure - это потенциальный вектор для XSS и Session Hijacking атак;
+- сервис NetologyVulnApp генерирует сессионные cookie PHPSESSID, для которых не установлены флаги HttpOnly и Secure - это потенциальный вектор для XSS и Session Hijacking атак.
 
 ![](pics/cookie_phpsessid.png)
 
@@ -62,7 +62,11 @@
 
 Dirsearch
 
-$ dirsearch -u http://92.51.39.106:8050 --cookie="PHPSESSID=ccltoo7k0vvc7drerrosabjnp" [Результат сканирования сервиса NetologyVulnApp](assets/dirsearch_8050.txt)
+```sh
+$ dirsearch -u http://92.51.39.106:8050 --cookie="PHPSESSID=ccltoo7k0vvc7drerrosabjnp" 
+```
+[Результат сканирования сервиса NetologyVulnApp](assets/dirsearch_8050.txt)
+
 $ dirsearch -u http://92.51.39.105:7788 [Результат сканирования сервиса Beemers](assets/dirsearch_7788.txt)
 
 ## Этап 3. Тестирование
