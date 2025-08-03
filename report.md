@@ -67,7 +67,10 @@ $ dirsearch -u http://92.51.39.106:8050 --cookie="PHPSESSID=ccltoo7k0vvc7drerros
 ```
 [Результат сканирования сервиса NetologyVulnApp](assets/dirsearch_8050.txt)
 
-$ dirsearch -u http://92.51.39.105:7788 [Результат сканирования сервиса Beemers](assets/dirsearch_7788.txt)
+```sh
+$ dirsearch -u http://92.51.39.105:7788 
+```
+[Результат сканирования сервиса Beemers](assets/dirsearch_7788.txt)
 
 ## Этап 3. Тестирование
 
