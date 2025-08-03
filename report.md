@@ -46,6 +46,8 @@
 
 ![](pics/beemers_main_page.png)
 
+</details>
+
 ### Аналитика собранных данных
 
 Уже на данном этапе можно провести первичный анализ тестируемого приложения на уязвимости:
@@ -55,8 +57,6 @@
 - сервис NetologyVulnApp генерирует сессионные cookie PHPSESSID, для которых не установлены флаги HttpOnly и Secure - это потенциальный вектор для XSS и Session Hijacking атак;
 
 ![](pics/cookie_phpsessid.png)
-
-</details>
 
 ## Этап 2. Сканирование
 
