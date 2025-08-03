@@ -63,7 +63,7 @@
 Dirsearch
 
 ```sh
-$ dirsearch -u http://92.51.39.106:8050 --cookie="PHPSESSID=ccltoo7k0vvc7drerrosabjnp" 
+$ dirsearch -u http://92.51.39.106:8050 --cookie="PHPSESSID=ccltoo7k0vvc7drerrosabjnp2" 
 ```
 [Результат сканирования сервиса NetologyVulnApp](assets/dirsearch_8050.txt)
 

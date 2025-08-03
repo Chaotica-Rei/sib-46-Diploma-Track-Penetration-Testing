@@ -1,4 +1,4 @@
-# Dirsearch started Sun Aug  3 00:20:32 2025 as: /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u http://92.51.39.106:8050 --cookie=PHPSESSID=ccltoo7k0vvc7drerrosabjnp
+# Dirsearch started Sun Aug  3 00:20:32 2025 as: /usr/lib/python3/dist-packages/dirsearch/dirsearch.py -u http://92.51.39.106:8050 --cookie=PHPSESSID=ccltoo7k0vvc7drerrosabjnp2
 
 403   292B   http://92.51.39.106:8050/.ht_wsr.txt
 403   295B   http://92.51.39.106:8050/.htaccess.orig
