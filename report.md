@@ -56,13 +56,13 @@
 - http://92.51.39.106:7788 - сервис Beemers, запущенный на веб-сервере TornadoServer 5.1.1 (ДОПОЛНИТЬ УЯЗВИМОСТИ)
 - OPENSSH?
 - использование сервисами NetologyVulnApp и Beemers соединения HTTP, данный протокол не является безопасным, т.к. передаёт данные в открытом (нешифрованном) виде;
-- сервис NetologyVulnApp генерирует сессионные cookie PHPSESSID, для которых не установлены флаги HttpOnly и Secure - это потенциальный вектор для XSS и Session Hijacking атак.
+- сервис NetologyVulnApp генерирует сессионные cookie PHPSESSID, для которых не установлены флаги HttpOnly, Secure, SameSite - это потенциальный вектор для XSS и Session Hijacking атак.
 
 ![](pics/cookie_phpsessid.png)
 
 ## Этап 2. Сканирование
 
-Для сканирования хоста использовались Open Source инструменты Nmap, Dirsearch.\
+Для сканирования хоста использовались Open Source инструменты Nmap, Dirsearch, OWASP ZAP\
 В ходе сканирования было обнаружено, что ...
 
 **Nmap**
@@ -99,4 +99,4 @@ $ dirsearch -u http://92.51.39.105:7788
 
 ## Этап 3. Тестирование
 
-## Этап 4. 
+## Этап 4. Выводы
