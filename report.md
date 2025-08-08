@@ -111,7 +111,7 @@ $ dirsearch -u http://92.51.39.105:7788
 
 По результатам сканирования были выявлены следующие уязвимости по уровню критичности:
 
-- $${\color{red}\textbf{Высокий уровень}}$$
+- $${\color{red}Высокий уровень}$$
   - Cross site scripting (DOM based);
   - Cross site scripting (Persistent);
   - Cross site scripting (Reflected);
@@ -119,17 +119,18 @@ $ dirsearch -u http://92.51.39.105:7788
   - Path Traversal;
   - Remote OS Command Injection.
 
-- **Средний уровень**
+- $${\color{orange}Средний уровень}$$
   - отсутствие токенов против CSRF-атак;
   - не установлен хедер Content Security Policy (CSP);
   - включена индексация директорий;
   - отсутствие хедера для защиты от clickjacking-атак;
   - использование уязвимой JS библиотеки.
   
-
-
+- $${\color{yellow}Низкий уровень}$$
   - Cookie без установленных параметров SameSite, HttpOnly;
   - отсутствие хедера X-Content-Type;
+  - утечки информации о сервере через поля заголовка X-Powered-By;
+  - утечки информации о версиях ПО через поля заголовка Server;
   - отсутствие хедера Strict-Transport-Security;
   
 
