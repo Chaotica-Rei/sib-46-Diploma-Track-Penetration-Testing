@@ -111,7 +111,7 @@ $ dirsearch -u http://92.51.39.105:7788
 
 По результатам сканирования были выявлены следующие уязвимости по уровню критичности:
 
-- $${\color{red}Red}$$Высокий уровень
+- $${\color{red}\textbf{Высокий уровень}}$$
   - Cross site scripting (DOM based);
   - Cross site scripting (Persistent);
   - Cross site scripting (Reflected);
