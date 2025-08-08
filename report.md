@@ -99,7 +99,7 @@ $ dirsearch -u http://92.51.39.105:7788
 
 ## Этап 3. Тестирование
 
-Приложение тестировалось вручную и с помощью автоматического сканера уязвимостей OWASP ZAP
+Приложение тестировалось вручную и с помощью автоматического сканера уязвимостей OWASP ZAP.
 
 **Результаты сканирования сервиса NetologyVulnApp:**
 
@@ -109,17 +109,28 @@ $ dirsearch -u http://92.51.39.105:7788
 
 ![](pics/zap_7788_report.png)
 
-По результатам сканирования были выявлены следующие уязвимости:
+По результатам сканирования были выявлены следующие уязвимости по уровню критичности:
 
-- Cross site scripting (DOM based);
-- Cross site scripting (Persistent);
-- Cross site scripting (Reflected);
-- SQL Injection;
-- отсутствие хедера для защиты от clickjacking-атак;
-- Cookie без установленных параметров SameSite, HttpOnly;
-- отсутствие хедера X-Content-Type;
-- Path Traversal;
-- Remote OS Command Injection;
-- отсутствие токена против CSRF-атак.
+- <span style="color: red;"><b>Высокий уровень</b></span>
+  - Cross site scripting (DOM based);
+  - Cross site scripting (Persistent);
+  - Cross site scripting (Reflected);
+  - SQL Injection;
+  - Path Traversal;
+  - Remote OS Command Injection.
+
+- **Средний уровень**
+  - отсутствие токенов против CSRF-атак;
+  - не установлен хедер Content Security Policy (CSP);
+  - включена индексация директорий;
+  - отсутствие хедера для защиты от clickjacking-атак;
+  - использование уязвимой JS библиотеки.
+  
+
+
+  - Cookie без установленных параметров SameSite, HttpOnly;
+  - отсутствие хедера X-Content-Type;
+  - отсутствие хедера Strict-Transport-Security;
+  
 
 ## Этап 4. Выводы
