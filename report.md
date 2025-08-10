@@ -170,9 +170,16 @@ $ dirsearch -u http://92.51.39.105:7788
 <details>
 <summary><b>Реализация (Proof of Concept)</b></summary>
 
+- выполнить переход на уязвимую страницу `http://92.51.39.106:8050/admin/index.php?page=login`;
+- в форму ввода ввести логин/пароль `admin/admin`.
+
 ![](pics/admin_area.png)
 
+После успешного выполнения запроса авторизовываемся под УЗ администратора:
+
 ![](pics/admin_area_logged.png)
+
+При попытке использовать консоль администратора (функция `Create a new user!`) получаем ошибку, т.к. функционал пока не реализован.
 
 ![](pics/admin_area_error.png)
 
