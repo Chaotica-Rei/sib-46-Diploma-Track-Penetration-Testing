@@ -145,6 +145,7 @@ $ dirsearch -u http://92.51.39.105:7788
 <details>
 <summary><b>Реализация (Proof of Concept)</b></summary>
 
+\
 - выполнить переход на уязвимую страницу `http://92.51.39.106:8050/users/login.php`;
 - в поле `Username` ввести `' OR 1=1 -- -'`;
 - поле `Password` заполнить любой комбинацией символов.
