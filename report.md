@@ -135,7 +135,7 @@ $ dirsearch -u http://92.51.39.105:7788
   
 **Результаты ручного тестирования сервиса NetologyVulnApp:**
 
-1. **Уязвимость SQL Injection** [A03:2021-Injection](https://owasp.org/Top10/A03_2021-Injection/)
+1. **Уязвимость SQL Injection** ([A03:2021-Injection](https://owasp.org/Top10/A03_2021-Injection/))
 
 **Страница:** `http://92.51.39.106:8050/users/login.php`\
 **Критичность:** Высокая\
@@ -145,7 +145,9 @@ $ dirsearch -u http://92.51.39.105:7788
 <details>
 <summary><b>Реализация (Proof of Concept)</b></summary>
 
-Выполнить переход на уязвимую страницу `http://92.51.39.106:8050/users/login.php`, в поле `Username` ввести `' OR 1=1 -- -'`, поле `Password` заполнить любой комбинацией символов:
+- выполнить переход на уязвимую страницу `http://92.51.39.106:8050/users/login.php`;
+- в поле `Username` ввести `' OR 1=1 -- -'`;
+- поле `Password` заполнить любой комбинацией символов.
 
 ![](pics/sql_injection_form_entries.png)
 
