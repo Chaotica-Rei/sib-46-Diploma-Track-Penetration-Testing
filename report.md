@@ -315,7 +315,7 @@ if ($bad_login)
 <summary><b>Реализация (Proof of Concept)</b></summary>
 
 - выполнить переход на уязвимую страницу `http://92.51.39.106:8050/pictures/upload.php`;
-- в открывшейся форме для загрузки картинок заполнить необходимые поля, выбрать для загрузки заранее подготовленный файл PHP-shell (данный shell был найден на [Github](https://github.com/flozz/p0wny-shell/tree/master)), нажать кнопку `Upload File`:
+- в открывшейся форме для загрузки картинок заполнить необходимые поля, выбрать для загрузки заранее подготовленный файл [PHP-shell](assets/shell.php) (данный shell был найден на [Github](https://github.com/flozz/p0wny-shell/tree/master)), нажать кнопку `Upload File`:
 
 ![](pics/file_upload_form.png)
 
