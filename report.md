@@ -187,6 +187,8 @@ $ dirsearch -u http://92.51.39.105:7788
 
 </details>
 
+---
+
 3. **Уязвимость к атакам BruteForce** ([A07:2021-Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/))
    
 **Страница:**`http://92.51.39.106:8050/users/login.php`\
@@ -217,6 +219,8 @@ hydra -l hackme -P "/home/kali/Downloads/rockyou.txt" -s 8050 92.51.39.106 http-
 ![](pics/hydra_user_hacked.png)
 
 </details>
+
+---
 
 4. **Уязвимость Path Traversal** ([A01:2021-Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/))
 
@@ -297,6 +301,7 @@ if ($bad_login)
 ```
 
 </details>
-  
+
+---
 
 ## Этап 4. Выводы
