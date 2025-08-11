@@ -304,7 +304,7 @@ if ($bad_login)
 
 ---
 
-5. **Уязвимость Unrestricted File Upload** ([]())
+5. **Уязвимость Unrestricted File Upload** ([A01:2021-Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/))
 
 **Страница:** `http://92.51.39.106:8050/pictures/upload.php`\
 **Критичность:** Высокая\
