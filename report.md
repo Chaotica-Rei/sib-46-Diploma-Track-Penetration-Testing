@@ -339,14 +339,9 @@ if ($bad_login)
 
 ![](pics/app_php_code.png)
 
----
-
-
-
-
-
-
 </details>
+
+---
 
 
 ## Этап 4. Выводы
