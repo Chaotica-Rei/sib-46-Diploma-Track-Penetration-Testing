@@ -157,6 +157,8 @@ $ dirsearch -u http://92.51.39.105:7788
 
 </details>
 
+---
+
 2. **Слабые логин и пароль администратора** ([A07:2021-Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/))
 
 **Страница:** `http://92.51.39.106:8050/admin/index.php?page=login`\
