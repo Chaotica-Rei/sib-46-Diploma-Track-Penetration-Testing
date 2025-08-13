@@ -382,7 +382,7 @@ if ($bad_login)
 7. **Уязвимость XSS**
 
 **Категория:** [A03:2021-Injection](https://owasp.org/Top10/A03_2021-Injection/)\
-**Страницы:** `http://92.51.39.106:8060/guestbook.php`, `http://92.51.39.106:8060/piccheck.php`, `http://92.51.39.106:8060/pictures/search.php?query=`, `http://92.51.39.106:8050/pictures/view.php?picid=`\
+**Страницы:** `http://92.51.39.106:8050/guestbook.php`, `http://92.51.39.106:8050/piccheck.php`, `http://92.51.39.106:8050/pictures/search.php?query=`, `http://92.51.39.106:8050/pictures/view.php?picid=`\
 **Критичность:** Высокая\
 **Описание:** На перечисленных страницах существует возможность добавления пользовательского ввода без санитизации.
 **Рекомендация для исправления:** Санитизация и экранирование пользовательского ввода.
@@ -390,7 +390,7 @@ if ($bad_login)
 <details>
 <summary><b>Реализация (Proof of Concept)</b></summary>
 
-Для `http://92.51.39.106:8060/piccheck.php`:
+Для `http://92.51.39.106:8050/piccheck.php`:
 
 - на главной странице сайта в поле `With this name` добавить `#"><img src=/ onerror=alert(document.cookie)>`, нажать кнопку `Send file`:
 
@@ -400,13 +400,13 @@ if ($bad_login)
 
 ![](pics/xss_stolen_cookie.png)
 
-Для `http://92.51.39.106:8060/pictures/search.php?query=`:
+Для `http://92.51.39.106:8050/pictures/search.php?query=`:
 
 - на любой странице сайта, где имеется поле `Search` ввести пользовательский ввод `#"><img src=/ onerror=alert(document.cookie)>`, нажать кнопку `Search`:
 
 ![](pics/xss_search_pics.png)
 
-- будет выполнен переход на страницу `http://92.51.39.106:8060/pictures/search.php?query=`, на которой отобразится всплывающее окно с сессионной cookie:
+- будет выполнен переход на страницу `http://92.51.39.106:8050/pictures/search.php?query=`, на которой отобразится всплывающее окно с сессионной cookie:
 
 ![](pics/xss_search_stolen_cookie.png)
 
