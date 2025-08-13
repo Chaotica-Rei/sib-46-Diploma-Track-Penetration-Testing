@@ -131,6 +131,8 @@ $ dirsearch -u http://92.51.39.105:7788
   - утечки информации о сервере через поля заголовка X-Powered-By;
   - утечки информации о версиях ПО через поля заголовка Server;
   - отсутствие хедера Strict-Transport-Security.
+
+---
   
 **Результаты ручного тестирования сервиса NetologyVulnApp:**
 
@@ -437,5 +439,7 @@ if ($bad_login)
 ![](pics/xss_recent_cookie.png)
 
 </details>
+
+---
 
 ## Этап 4. Выводы
