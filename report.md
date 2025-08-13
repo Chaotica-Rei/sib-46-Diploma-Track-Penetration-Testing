@@ -132,7 +132,7 @@ $ dirsearch -u http://92.51.39.105:7788
   - утечки информации о версиях ПО через поля заголовка Server;
   - отсутствие хедера Strict-Transport-Security.
   
-**_Результаты ручного тестирования сервиса NetologyVulnApp:_**
+**Результаты ручного тестирования сервиса NetologyVulnApp:**
 
 1. **Уязвимость SQL Injection**
 
@@ -372,6 +372,69 @@ if ($bad_login)
 и при эксплуатации уязвимости:
 
 ![](pics/passcheck_dos.png)
+
+</details>
+
+---
+
+7. **Уязвимость XSS**
+
+**Категория:** [A03:2021-Injection](https://owasp.org/Top10/A03_2021-Injection/)\
+**Страницы:** `http://92.51.39.106:8060/guestbook.php`, `http://92.51.39.106:8060/piccheck.php`, `http://92.51.39.106:8060/pictures/search.php?query=`, `http://92.51.39.106:8050/pictures/view.php?picid=`\
+**Критичность:** Высокая\
+**Описание:** На перечисленных страницах существует возможность добавления пользовательского ввода без санитизации.
+**Рекомендация для исправления:** Санитизация и экранирование пользовательского ввода.
+
+<details>
+<summary><b>Реализация (Proof of Concept)</b></summary>
+
+Для `http://92.51.39.106:8060/piccheck.php`:
+
+- на главной странице сайта в поле `With this name` добавить `#"><img src=/ onerror=alert(document.cookie)>`, нажать кнопку `Send file`:
+
+![](pics/xss_main_page.png)
+
+- после выполнения запроса произойдёт перенаправление на страницу `http://92.51.39.106:8050/piccheck.php`, на которой отобразится всплывающее окно с сессионной cookie:
+
+![](pics/xss_stolen_cookie.png)
+
+Для `http://92.51.39.106:8060/pictures/search.php?query=`:
+
+- на любой странице сайта, где имеется поле `Search` ввести пользовательский ввод `#"><img src=/ onerror=alert(document.cookie)>`, нажать кнопку `Search`:
+
+![](pics/xss_search_pics.png)
+
+- будет выполнен переход на страницу `http://92.51.39.106:8060/pictures/search.php?query=`, на которой отобразится всплывающее окно с сессионной cookie:
+
+![](pics/xss_search_stolen_cookie.png)
+
+Для `http://92.51.39.106:8060/guestbook.php`:
+
+- на странице `http://92.51.39.106:8050/guestbook.php` заполнить поля `Name` и `Comment`:
+
+![](pics/xss_guestbook_entries.png)
+
+- на странице появится введенный коментарий и всплывет окно с сессионной cookie:
+
+![](pics/xss_guestbook_performed.png)
+
+Для `http://92.51.39.106:8050/pictures/view.php?picid=`:
+
+- выполнить переход на страницу любой картинки на вкладке `Recent`, у каждой картинки есть секция для комментариев:
+
+![](pics/xss_recent.png)
+
+- заполнить поле `Add your comment` пользовательским вводом `#"><img src=/ onerror=alert(document.cookie)>`, нажать кнопку `Preview`:
+
+![](pics/xss_recent_preview.png)
+
+- отобразится предварительный просмотр комментария, нажать кнопку `Create`:
+
+![](pics/xss_recent_create.png)
+
+- на странице появится всплывающее окно с сессионной cookie:
+
+![](pics/xss_recent_cookie.png)
 
 </details>
 
