@@ -563,6 +563,10 @@ hydra -l admin -P "/home/kali/Downloads/passwords.txt" -s 7788 92.51.39.106 http
 
 ![](pics/beemer_path_traversal.png)
 
+- аналогичным образом доступен просмотр файла `/etc/shadow`:
+
+![](pics/beemer_path_traversal_2.png)
+
 </details>
 
 ---
