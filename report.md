@@ -582,7 +582,7 @@ hydra -l admin -P "/home/kali/Downloads/passwords.txt" -s 7788 92.51.39.106 http
 <details>
 <summary><b>Реализация (Proof of Concept)</b></summary>
 
-- на главной странице сайта в форме `Upload Car Wallpaper` выбрать файл для загрузки и нажать кнопку `upload`;
+- на главной странице сайта в форме `Upload Car Wallpaper` выбрать файл для загрузки (в данном случае загружаем файл [pyshell.py](assets/pyshell.py), который был найден [Github](https://github.com/JoelGMSec/PyShell)) и нажать кнопку `upload`;
 
 ![](pics/ufu_shell_upload.png)
 
